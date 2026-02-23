@@ -17,7 +17,33 @@
 
     <img src="{{ pelicula.Poster }}" width="250">
 
-    <br><br>
+    <hr>
+
+    <h2>Agregar comentario</h2>
+
+    <form method="POST">
+        <input type="text" name="persona" placeholder="Tu nombre" required>
+        <br><br>
+        <textarea name="comentario" placeholder="Escribe tu comentario" required></textarea>
+        <br><br>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <hr>
+
+    <h2>Comentarios</h2>
+
+    {% if comentarios %}
+        {% for c in comentarios %}
+            <p><strong>{{ c[0] }}</strong> ({{ c[2] }})</p>
+            <p>{{ c[1] }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No hay comentarios todavía.</p>
+    {% endif %}
+
+    <br>
     <a href="/">Volver a buscar</a>
 {% endif %}
 
