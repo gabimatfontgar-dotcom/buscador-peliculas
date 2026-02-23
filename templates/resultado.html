@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+</head>
+<body>
+
+{% if error %}
+    <h2>{{ error }}</h2>
+    <a href="/">Volver</a>
+{% else %}
+    <h1>{{ pelicula.Title }}</h1>
+    <p><strong>Año:</strong> {{ pelicula.Year }}</p>
+    <p><strong>Género:</strong> {{ pelicula.Genre }}</p>
+    <p><strong>Director:</strong> {{ pelicula.Director }}</p>
+    <p><strong>Sinopsis:</strong> {{ pelicula.Plot }}</p>
+
+    <img src="{{ pelicula.Poster }}" width="250">
+
+    <br><br>
+    <a href="/">Volver a buscar</a>
+{% endif %}
+
+</body>
+</html>
